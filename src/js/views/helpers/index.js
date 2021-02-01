@@ -24,11 +24,6 @@ export const createApp = () => {
 
 
 
-
-
-
-
-
 const CreateRelatedProductSection = (related) => {
     const items = related.map(item => {
         return ProductSeeMoreItem(item.imageUrl)
@@ -106,4 +101,28 @@ export const CreateCollectionPage = (collpageData) => {
     Title(collpageData.title),
     CollPageGrid(collpageData.products)
  ])   
+}
+
+
+
+// Function responsible for rendering the page in the DOM
+// params - (homepage | collpage | productpage) 
+
+export const renderPage = (resource, staticData) => {
+    if(resource === "homepage") {
+        document.querySelector('body').querySelector('.main').innerHTML = ``;
+        document.querySelector('body').querySelector('.main').append(
+            CreateHomePage(staticData)
+            )
+        }else if(resource === "collpage") {  
+            document.querySelector('body').querySelector('.main').innerHTML = ``;
+            document.querySelector('body').querySelector('.main').append(
+                CreateCollectionPage(staticData)
+            )
+        }else if(resource === "productpage") {
+            document.querySelector('body').querySelector('.main').innerHTML = ``;
+            document.querySelector('body').querySelector('.main').append(
+                CreateProductPage(staticData)
+            )
+    }
 }

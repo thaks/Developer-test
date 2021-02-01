@@ -12,17 +12,19 @@ import '../scss/main.scss'
 import { elements } from "./views/base";
 
 
-import { createApp, CreateProductPage, CreateHomePage } from "./views/helpers";
-import { homepageData, productpageData } from "./data";
+import { createApp, CreateProductPage, CreateHomePage, renderPage } from "./views/helpers";
+import { homepageData, productpageData, collpageData } from "./data";
 
 
 // 1) Initializze Layout Container Components - Header, Main, Footer
 createApp();
 
+// 2) Render Homepage
+renderPage("homepage", homepageData);
+// renderPage("collpage", collpageData);
+// renderPage("productpage", productpageData);
 
-document.querySelector('body').append(
-    CreateHomePage(homepageData)
-)
+
 
 
 
