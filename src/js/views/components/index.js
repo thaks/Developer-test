@@ -69,3 +69,110 @@ export const SearchInput = () => {
     
     return searchInput;
 }
+
+
+// Product Page Components 
+//////////////////////////////////////
+
+// Component - ProductImageBox
+export const ProductImageBox = (imageSource) => {
+    const htmlString = `<img class="ppage-info-main__image " src="${imageSource}" alt="T Shop"/>`;
+    const productImageBox = document.createElement('div')
+    productImageBox.classList.add('ppage-info-main__imagebox')
+    productImageBox.innerHTML = htmlString;
+    return productImageBox;
+}
+
+// Component - ProductInfo
+export const ProductInfo = (title, price) => {
+    const productInfo = document.createElement('div');
+    productInfo.classList.add('ppage-info-main__contentbox')
+    const htmlString = `
+        <div class="ppage-info-main__title">${title}</div>
+        <div class="ppage-info-main__price">${price}</div>
+    `
+    productInfo.innerHTML = htmlString;
+    return productInfo;
+}
+
+// Component - ProductSize
+export const ProductSize = (sizes) => {
+    const productSize = document.createElement('div');
+    productSize.classList.add('ppage-info-main__size')
+    const htmlString = `
+        <div class="ppage-info-main__size__top">
+            <div class="ppage-info-main__size__title">Size :</div>
+            <div class="ppage-info-main__size__selectedshow">${sizes[0].sizeName}</div>
+        </div>
+
+        <div class="ppage-info-main__size__bottom">
+            ${
+                sizes.map(item => {
+                    return `<div class="ppage-info-main__size__item" data-value="${item.sizeName}">${item.sizeName}</div>`
+                })
+            }
+        </div>
+    `;
+    productSize.innerHTML=htmlString;
+    return productSize;
+}
+
+// Component - ProductColor
+export const ProductColor = (colors) => {
+    const productColor = document.createElement('div');
+    productColor.classList.add('ppage-info-main__color')
+    const htmlString = `
+        <div class="ppage-info-main__color__top">
+            <div class="ppage-info-main__color__title">Color :</div>
+            <div class="ppage-info-main__color__selectedshow">Yellow</div>
+        </div>
+
+        <div class="ppage-info-main__color__bottom">
+            ${colors.map(item => {
+                return `<div class="ppage-info-main__color__item" style="background-color: ${item.colorCode}" data-value="${item.colorName}"></div>`
+            })}
+        </div>
+    `;
+    productColor.innerHTML=htmlString;
+    return productColor;
+}
+
+// Component - ProductCartButton 
+export const ProductCartButton = () => {
+    const button = document.createElement('div')
+    button.classList.add('ppage-info-main__cartbutton');
+    button.innerHTML = `ADD TO CART`
+    return button;
+}
+
+// Component - ProductSeeMoreItem
+export const ProductSeeMoreItem = (imageSource) => {
+    const htmlString = `<img class="ppage-info-main__seemore__image" src="${imageSource}" alt="T Shop"/>`;
+    const item = document.createElement('div');
+    item.classList.add('ppage-info-main__seemore__item');
+    item.innerHTML = htmlString;
+    return item
+}
+
+// Component - ProductSeemMoreHeading
+export const ProductSeemMoreHeading = (title) => {
+    const heading =  document.createElement('h3')
+    heading.classList.add('ppage-info-main__seemore-wrapper__heading')
+    heading.innerHTML = title;
+    return heading;
+}
+
+// Component - Description
+export const ProductDescription = (description) => {
+    const desc = document.createElement('div')
+    desc.classList.add('ppage-info-main__desc')
+    const title = document.createElement('h3')
+    title.classList.add('ppage-info-main__desc__title')
+    title.innerHTML = `Description`;
+    const content = document.createElement('div');
+    content.classList.add('ppage-info-main__desc__content')
+    content.innerHTML = description;
+    desc.append(title)
+    desc.append(content);
+    return desc;
+}
