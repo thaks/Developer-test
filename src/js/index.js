@@ -12,8 +12,8 @@ import '../scss/main.scss'
 import { elements } from "./views/base";
 
 
-import { createApp, CreateProductPage } from "./views/helpers";
-import { productpageData } from "./data";
+import { createApp, CreateProductPage, CreateHomePage } from "./views/helpers";
+import { homepageData, productpageData } from "./data";
 
 
 // 1) Initializze Layout Container Components - Header, Main, Footer
@@ -24,5 +24,8 @@ createApp();
 
 
 document.querySelector('body').append(
-    CreateProductPage(productpageData)
+    CreateHomePage(homepageData)
 )
+
+
+

@@ -25,3 +25,35 @@ export const productpageData = {
         {imageUrl: "https://cdn.shopify.com/s/files/1/2185/2813/products/M1133R_01499_6_87662e1c-b2d6-4193-b502-4f43e98bb09b_750x.jpg?v=1603749558"}
     ]
 }
+
+export const homepageData = {
+    bannerUrl : "https://visionnext.ae/wp-content/uploads/2019/03/dubai-sliding-banner.jpg",
+    homepageSectionTitle: "Featured Products",
+    products: [
+        {
+            imageUrl : "https://cdn.shopify.com/s/files/1/2185/2813/products/M1133R_01499_6_87662e1c-b2d6-4193-b502-4f43e98bb09b_750x.jpg",
+            productName: "Tahir best T shirt",
+            productPrice: "4543AED",
+        },
+        {
+            imageUrl : "https://cdn.shopify.com/s/files/1/2185/2813/products/M1133R_01499_6_87662e1c-b2d6-4193-b502-4f43e98bb09b_750x.jpg",
+            productName: "Tahir best T shirt",
+            productPrice: "4543AED",
+        },
+        {
+            imageUrl : "https://cdn.shopify.com/s/files/1/2185/2813/products/M1133R_01499_6_87662e1c-b2d6-4193-b502-4f43e98bb09b_750x.jpg",
+            productName: "Tahir best T shirt",
+            productPrice: "4543AED",
+        },        {
+            imageUrl : "https://cdn.shopify.com/s/files/1/2185/2813/products/M1133R_01499_6_87662e1c-b2d6-4193-b502-4f43e98bb09b_750x.jpg",
+            productName: "Tahir best T shirt",
+            productPrice: "4543AED",
+        }
+        ,        {
+            imageUrl : "https://cdn.shopify.com/s/files/1/2185/2813/products/M1133R_01499_6_87662e1c-b2d6-4193-b502-4f43e98bb09b_750x.jpg",
+            productName: "Tahir best T shirt",
+            productPrice: "4543AED",
+        }
+    ]
+}
+

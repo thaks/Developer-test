@@ -176,3 +176,49 @@ export const ProductDescription = (description) => {
     desc.append(content);
     return desc;
 }
+
+
+
+// Home Page Components 
+//////////////////////////////////////
+
+export const Banner = (bannerUrl) => {
+    const banner = document.createElement('div');
+    banner.classList.add('homepage__banner');
+    banner.innerHTML = `
+        <img class="homepage__banner__image" src="${bannerUrl}" alt="banner" />
+    `;
+    return banner;
+}
+
+export const SubTitle = (className,subtitle) => {
+    const h3 = document.createElement('h3')
+    h3.classList.add('subtitle')
+    className && h3.classList.add(className)
+    h3.innerHTML = subtitle;
+    return h3;
+}
+
+export const HomepageProductItem = (prod) => {
+    const item = document.createElement('div');
+    item.classList.add('homepage__featured__item')
+    item.dataset.id = '01';
+    item.classList.add('product-item-button')
+
+    const htmlString = `
+        <div class="homepage__featured__item__imagebox product_item_button">
+            <img class="homepage__featured__item__image" src="${prod.imageUrl}" alt="" />
+        </div>
+
+        <div class="homepage__featured__item__titlebox">
+            <div class="homepage__featured__item__title">${prod.productName}</div>
+            <div class="homepage__featured__item__price">
+                ${prod.productPrice}
+            </div>
+        <div>
+    `;
+    item.innerHTML = htmlString;
+    return item;
+}
+
+
