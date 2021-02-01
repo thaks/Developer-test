@@ -222,3 +222,37 @@ export const HomepageProductItem = (prod) => {
 }
 
 
+// Collection Page Components 
+//////////////////////////////////////
+
+export const Title = (titleData) => {
+    const title = document.createElement('h2');
+    title.classList.add('collpage__title');
+    title.innerHTML = titleData;
+    return title;
+}
+
+
+export const CollectionPageItem = (prod) => {
+    const item = document.createElement('div');
+    item.classList.add('collpage__item')
+    item.classList.add('product-item-button')
+
+    const htmlString = `
+    <div class="collpage__item__imagebox">
+        <img class="collpage__item__image" src="${prod.imageUrl}" alt="" />
+    </div>
+
+    <div class="collpage__item__titlebox">
+        <div class="collpage__item__title">${prod.productName}</div>
+        <div class="collpage__item__price">
+            ${prod.productPrice}
+        </div>
+    <div>
+    `;
+
+    item.innerHTML = htmlString;
+    return item;
+}
+
+

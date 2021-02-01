@@ -20,9 +20,6 @@ import { homepageData, productpageData } from "./data";
 createApp();
 
 
-
-
-
 document.querySelector('body').append(
     CreateHomePage(homepageData)
 )

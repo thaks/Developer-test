@@ -5,7 +5,7 @@ import Header from '../components/layouts/Header';
 import Main from '../components/layouts/Main';
 
 
-import { ProductCartButton, ProductColor, ProductDescription, ProductImageBox, ProductInfo, ProductSeemMoreHeading, ProductSeeMoreItem, ProductSize, Wrapper, Banner, SubTitle, HomepageProductItem } from '../components';
+import { ProductCartButton, ProductColor, ProductDescription, ProductImageBox, ProductInfo, ProductSeemMoreHeading, ProductSeeMoreItem, ProductSize, Wrapper, Banner, SubTitle, HomepageProductItem , Title, CollectionPageItem} from '../components';
 
 
 const initRender = (childrens) => {
@@ -17,14 +17,10 @@ const initRender = (childrens) => {
         app.append(child);
     })
 }
-Header
 
 export const createApp = () => {
     initRender([Header("header"), Main("main"), Footer("footer")])
 }
-
-
-
 
 
 
@@ -69,48 +65,6 @@ export const CreateProductPage = (details) => {
 
 
 
-
-
-// const Banner = (bannerUrl) => {
-//     const banner = document.createElement('div');
-//     banner.classList.add('homepage__banner');
-//     banner.innerHTML = `
-//         <img class="homepage__banner__image" src="${bannerUrl}" alt="banner" />
-//     `;
-//     return banner;
-// }
-
-// const SubTitle = (className,subtitle) => {
-//     const h3 = document.createElement('h3')
-//     h3.classList.add('subtitle')
-//     className && h3.classList.add(className)
-//     h3.innerHTML = subtitle;
-//     return h3;
-// }
-
-// const HomepageProductItem = (prod) => {
-//     const item = document.createElement('div');
-//     item.classList.add('homepage__featured__item')
-//     item.dataset.id = '01';
-//     item.classList.add('product-item-button')
-
-//     const htmlString = `
-//         <div class="homepage__featured__item__imagebox product_item_button">
-//             <img class="homepage__featured__item__image" src="${prod.imageUrl}" alt="" />
-//         </div>
-
-//         <div class="homepage__featured__item__titlebox">
-//             <div class="homepage__featured__item__title">${prod.productName}</div>
-//             <div class="homepage__featured__item__price">
-//                 ${prod.productPrice}
-//             </div>
-//         <div>
-//     `;
-//     item.innerHTML = htmlString;
-//     return item;
-// }
-
-
 const HompageFeaturedGrid = (products) => {
     const items = products.map(prod => {
         return HomepageProductItem(prod);
@@ -130,4 +84,26 @@ export const CreateHomePage = (data) => {
             HompageFeaturedGrid(data.products)
         ])
     ])
+}
+
+
+
+
+
+
+const CollPageGrid = (products) => {
+
+    const items = products.map(prod => {
+        return CollectionPageItem(prod)
+    })
+    return Wrapper('collpage__grid', [
+      ...items
+    ])
+}
+
+export const CreateCollectionPage = (collpageData) => {
+ return Wrapper('collpage', [
+    Title(collpageData.title),
+    CollPageGrid(collpageData.products)
+ ])   
 }
