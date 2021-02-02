@@ -24,3 +24,8 @@ renderPage("homepage", homepageData);
 // renderPage("collpage", collpageData);
 // renderPage("productpage", productpageData);
 
+// 3) Add Listeners 
+addListeners()
+
+
+

@@ -130,3 +130,31 @@ export const renderPage = (resource, staticData) => {
 
 
 
+
+export const addListeners = () => {
+
+    // Header Event Listeners
+    // 1. Logobox 
+    document.body.querySelector('.logobox').addEventListener('click', () => {
+        renderPage("homepage", homepageData)
+    })
+
+    // 2. nav links
+    const navLinks = document.body.querySelectorAll('.navlink')
+    console.log(navLinks)
+
+    navLinks.forEach(item => {
+        item.addEventListener('click', e => {
+            const title = e.target.dataset.type;
+            if(title) {
+                const newCollData = {...collpageData, title};
+                renderPage("collpage", newCollData);
+            }else {
+                renderPage("homepage", homepageData);
+                
+            }
+        })
+    })
+
+  
+}
