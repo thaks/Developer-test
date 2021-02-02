@@ -6,6 +6,7 @@ import Main from '../components/layouts/Main';
 
 
 import { ProductCartButton, ProductColor, ProductDescription, ProductImageBox, ProductInfo, ProductSeemMoreHeading, ProductSeeMoreItem, ProductSize, Wrapper, Banner, SubTitle, HomepageProductItem , Title, CollectionPageItem} from '../components';
+import { collpageData, homepageData, productpageData } from '../../data';
 
 
 const initRender = (childrens) => {
@@ -126,3 +127,6 @@ export const renderPage = (resource, staticData) => {
             )
     }
 }
+
+
+

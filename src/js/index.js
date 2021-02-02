@@ -12,7 +12,7 @@ import '../scss/main.scss'
 import { elements } from "./views/base";
 
 
-import { createApp, CreateProductPage, CreateHomePage, renderPage } from "./views/helpers";
+import { createApp, CreateProductPage, CreateHomePage, renderPage, addListeners } from "./views/helpers";
 import { homepageData, productpageData, collpageData } from "./data";
 
 
@@ -23,8 +23,4 @@ createApp();
 renderPage("homepage", homepageData);
 // renderPage("collpage", collpageData);
 // renderPage("productpage", productpageData);
-
-
-
-
 

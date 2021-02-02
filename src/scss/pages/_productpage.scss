@@ -1,0 +1,214 @@
+.ppage-info-main {
+    // background-color: red;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    @include respond(tab-port) {
+        grid-template-columns: 1fr;
+    }
+
+    &__imagebox {
+        padding: 1.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+
+        @include respond(tab-port) {
+            padding: 0;
+        }
+    }
+
+    &__image {
+        width: 100%;
+        align-self: flex-start;
+    }
+
+    &__details {
+        padding: 1.5rem;
+        padding-left: 2.5rem;
+        @include respond(tab-port) {
+            padding: 0;
+            padding-top: 1rem;
+        }
+        
+    }
+
+    &__contentbox {
+        margin-bottom: 2rem;
+    }
+
+    &__title {
+        font-size: 2.5rem;
+        @include respond(tab-port) {
+            font-size: 1.8rem;
+            font-weight: lighter;
+        }
+    }
+
+    &__price {
+        font-size: 1.6rem;
+    }
+
+    &__size {
+        &__top {
+            padding: 1rem;
+            padding-left: 0;
+            font-size: 1.6rem;
+            padding-top: 0;
+            display: flex;
+            align-items: center;
+            // background-color: blue;
+        }
+
+        &__title {
+            font-size: 1.6rem;
+            margin-right: 1rem;
+            @include respond(tab-port) {
+                font-size: (1.4rem);
+            }
+        }
+
+        &__selectedshow {
+            @include respond(tab-port) {
+                font-size: (1.4rem);
+            }
+        }
+
+        &__bottom {
+            padding: 1.5rem;
+            padding-left: 0;
+            padding-top: 0;
+            display: flex;
+        }
+
+        &__item {
+            width: 40px;
+            height: 40px;
+            border: 1px solid black;
+            border-radius: 4px;
+            margin-right: 1.5rem;
+            font-size: 1.3rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            &.selected {
+                background-color: black;
+                color: white;
+            }
+        }
+    }
+    &__color {
+        &__top {
+            padding: 1rem;
+            padding-left: 0;
+            font-size: 1.6rem;
+            display: flex;
+            align-items: center;
+            // background-color: blue;
+        }
+
+        &__title {
+            font-size: 1.6rem;
+            margin-right: 1rem;
+            @include respond(tab-port) {
+                font-size: (1.4rem);
+            }
+        }
+
+        &__selectedshow {
+            @include respond(tab-port) {
+                font-size: (1.4rem);
+            }
+        }
+
+        &__bottom {
+            padding: 1.5rem;
+            padding-left: 0;
+            padding-top: 0;
+            display: flex;
+        }
+
+        &__item {
+            width: 40px;
+            height: 40px;
+            background-color: red;
+            border-radius: 4px;
+            margin-right: 1.5rem;
+
+            &.selected {
+                border: 1.5px solid black;
+            }
+        }
+    }
+    &__cartbutton {
+        margin-top: 1.5rem;
+        background-color: #ddd;
+        width: 100%;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.7rem;
+        text-transform: uppercase;
+        border-radius: 5px;
+        cursor: pointer;
+
+        @include respond(tab-port) {
+            font-size: (1.4rem);
+        }
+
+        &:hover {
+            background-color: rgb(204, 204, 204);
+        }
+    }
+
+    &__desc {
+        margin-top: 30px;
+        &__title {
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            font-weight: 600;
+
+            @include respond(tab-port) {
+                font-size: (1.4rem);
+            }
+        }
+
+        &__content {
+            color: #505050;
+            margin-top: 1rem;
+            font-size: 1.6rem;
+            @include respond(tab-port) {
+                font-size: (1.3rem);
+            }
+        }
+    }
+
+
+    &__seemore {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: .7rem;
+
+        &__image {
+            width: 100%;
+        }
+    }
+}
+
+.ppage-info-main__seemore-wrapper {
+    margin-top: 2rem;
+
+    &__heading {
+        margin-bottom: 1.5rem;
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        font-weight: 600;
+
+        @include respond(tab-port) {
+            font-size: (1.4rem);
+        }
+    }
+}

@@ -1,0 +1,15 @@
+.navlink {
+    font-size: 1.6rem;
+    padding: 5px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #eee;
+    }
+
+    @include respond(tab-port) {
+        font-size: 1.2rem;
+        padding: 3px 10px;
+    }
+}
