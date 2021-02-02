@@ -7,7 +7,8 @@ export default class Featured {
 
     async getFeaturedProducts() {
         try {   
-            const result = await Shop.get('/')
+            const result = await Shop.get('/api/v1/products/featured')
+            console.log({result})
             this.products = result.data.data;
             
         }catch(err) {

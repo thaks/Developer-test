@@ -202,7 +202,7 @@ export const SubTitle = (className,subtitle) => {
 export const HomepageProductItem = (prod) => {
     const item = document.createElement('div');
     item.classList.add('homepage__featured__item')
-    item.dataset.id = '01';
+    item.dataset.id = prod.id;
     item.classList.add('product-item-button')
 
     const htmlString = `
@@ -211,9 +211,9 @@ export const HomepageProductItem = (prod) => {
         </div>
 
         <div class="homepage__featured__item__titlebox">
-            <div class="homepage__featured__item__title">${prod.productName}</div>
+            <div class="homepage__featured__item__title">${prod.title}</div>
             <div class="homepage__featured__item__price">
-                ${prod.productPrice}
+                ${prod.price}
             </div>
         <div>
     `;
