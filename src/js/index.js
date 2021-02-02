@@ -14,8 +14,11 @@ import { elements } from "./views/base";
 
 import { createApp, renderPage } from "./views/helpers";
 import { productpageData, collpageData } from "./data";
+
 import Featured from "./models/Featured";
 import Product from "./models/Product";
+import Collection from "./models/Collection";
+
 import * as homeView from './views/featuredView';
 import * as productPageView from './views/productView';
 
