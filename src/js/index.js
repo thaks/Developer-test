@@ -15,15 +15,17 @@ import { elements } from "./views/base";
 import { createApp, renderPage } from "./views/helpers";
 import { productpageData, collpageData } from "./data";
 
+// Model Imports
 import Featured from "./models/Featured";
 import Product from "./models/Product";
 import Collection from "./models/Collection";
+import Search from "./models/Search";
 
+// View Imports
 import * as homeView from './views/featuredView';
 import * as productPageView from './views/productView';
 import * as collectionView from './views/collectionView';
 import * as searchView from './views/searchView';
-import Search from "./models/Search";
 
 
 // GLOBAL STATE 
@@ -32,56 +34,10 @@ const state = {
 }
 
 
-
-// Controller - Featured 
-const controlFeatured = async () => {
-    
-    // 1. New featured object and add to the state 
-    state.featured = new Featured()
-    
-    // 2. Preare UI for the result 
-    
-    // 3. Search for Featured products
-    await state.featured.getFeaturedProducts()
-    
-    // 4. Render the result on the UI
-    homeView.renderHomepaeWithFeaturedResult(state.featured.products);
-}
-
-
-// Controller - Product 
-const controlProduct = async (id) => {
-    // 1. New Product object and add to the state.
-    state.product = new Product(id)
-
-    // 2. Preare UI for the result 
-    
-    // 3. Search for Single Product by ID
-    await state.product.getProduct()
-
-    // 4. Render the result on the UI
-    productPageView.renderWithProducResult(state.product.product);
-}
-
-
-// Controller - Collection 
-const controlCollection = async (type) => {
-    // 1. New Product object and add to the state.
-    state.collection = new Collection(type)
-
-    // 2. Preare UI for the result 
-    
-    // 3. Search for Single Product by ID
-    await state.collection.getProductsOfType()
-
-    // 4. Render the result on the UI
-    collectionView.renderWithProducResult(state.collection.products,type);
-}
-
 // Controller - Search 
 const controlSearch = async () => {
     // 1. Get query from view
-    const query = "men";
+    const query = searchView.getInput()
     
     if(query) {
         // 2. New Serch object and add to the state.
@@ -89,6 +45,7 @@ const controlSearch = async () => {
         
         // 2. Preare UI for the result 
         searchView.clearInput()
+
         // 3. Search for Single Product by ID
         await state.search.getProducts()
     
@@ -100,12 +57,60 @@ const controlSearch = async () => {
 
 
 
+// Controller - Featured 
+const controlFeatured = async () => {
+    
+    // 1. New featured object and add to the state 
+    state.featured = new Featured()
+        
+    // 3. Search for Featured products
+    await state.featured.getFeaturedProducts()
+    
+    // 4. Render the result on the UI
+    homeView.renderHomepaeWithFeaturedResult(state.featured.products);
+}
+
+
+
+// Controller - Product 
+const controlProduct = async (id) => {
+    // 1. New Product object and add to the state.
+    state.product = new Product(id)
+    
+    // 3. Search for Single Product by ID
+    await state.product.getProduct()
+
+    // 4. Render the result on the UI
+    productPageView.renderWithProducResult(state.product.product);
+}
+
+
+
+// Controller - Collection 
+const controlCollection = async (type) => {
+    // 1. New Product object and add to the state.
+    state.collection = new Collection(type)
+    
+    // 3. Search for Single Product by ID
+    await state.collection.getProductsOfType()
+
+    // 4. Render the result on the UI
+    collectionView.renderWithProducResult(state.collection.products,type);
+}
+
+
+
+
+
+
 // 1) Initializze Layout Container Components - Header, Main, Footer
 createApp();
 controlFeatured()
 
-// 2) Add Listeners 
 
+
+
+// 2) Add Listeners 
 // Header Event Listeners
 // 1. Logobox 
 document.body.querySelector('.logobox').addEventListener('click', () => {
@@ -197,7 +202,3 @@ window.addEventListener('click', e => {
     closestItem.classList.add('selected')
     colorReslut.innerHTML = value;
 })
-
-// 5. Product Color Varaint;
-// ppage-info-main__color__item
-// ppage-info-main__color__selectedshow
