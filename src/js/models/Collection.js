@@ -1,3 +1,5 @@
+import Shop from '../api/Shop'
+
 export default class Collection {
     constructor(type) {
         this.type = type;
@@ -6,10 +8,11 @@ export default class Collection {
     async getProductsOfType() {
         try {
             const result = await Shop.get(`/api/v1/products/collection?type=${this.type}`)
-            console.log("Collection Result", result)
+            this.products = result.data.products;
+            console.log("Collection???", this.products)
         }
         catch(err) {
-
+            console.log(err.message)
         }
     }
 } 

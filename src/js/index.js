@@ -21,6 +21,7 @@ import Collection from "./models/Collection";
 
 import * as homeView from './views/featuredView';
 import * as productPageView from './views/productView';
+import * as collectionView from './views/collectionView';
 
 
 // GLOBAL STATE 
@@ -56,6 +57,18 @@ const controlProduct = async (id) => {
     productPageView.renderWithProducResult(state.product.product);
 }
 
+const controlCollection = async (type) => {
+    // 1. New Product object and add to the state.
+    state.collection = new Collection(type)
+
+    // 2. Preare UI for the result 
+    
+    // 3. Search for Single Product by ID
+    await state.collection.getProductsOfType()
+
+    // 4. Render the result on the UI
+    collectionView.renderWithProducResult(state.collection.products);
+}
 
 // 1) Initializze Layout Container Components - Header, Main, Footer
 createApp();
@@ -75,10 +88,9 @@ console.log(navLinks)
 
 navLinks.forEach(item => {
     item.addEventListener('click', e => {
-        const title = e.target.dataset.type;
-        if(title) {
-            const newCollData = {...collpageData, title};
-            renderPage("collpage", newCollData);
+        const type = e.target.dataset.type;
+        if(type) {
+            controlCollection(type)
         }else {
             controlFeatured()
             

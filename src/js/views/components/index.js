@@ -27,7 +27,9 @@ export const LogoBox = (imageSource) => {
 export const NavLink = (linkText, linktype) => {
     const htmlString = `${linkText}`;
     const navlink = document.createElement('div')
-    if(linktype) navlink.dataset.type = linktype
+    if(linktype) {
+        navlink.dataset.type = linktype
+    }
     navlink.classList.add('navlink')
     navlink.innerHTML = htmlString;
     return navlink;
@@ -236,6 +238,7 @@ export const Title = (titleData) => {
 export const CollectionPageItem = (prod) => {
     const item = document.createElement('div');
     item.classList.add('collpage__item')
+    item.dataset.id = prod.id;
     item.classList.add('product-item-button')
 
     const htmlString = `
@@ -244,9 +247,9 @@ export const CollectionPageItem = (prod) => {
     </div>
 
     <div class="collpage__item__titlebox">
-        <div class="collpage__item__title">${prod.productName}</div>
+        <div class="collpage__item__title">${prod.title}</div>
         <div class="collpage__item__price">
-            ${prod.productPrice}
+            ${prod.price}
         </div>
     <div>
     `;

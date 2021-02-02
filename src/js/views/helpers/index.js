@@ -88,7 +88,6 @@ export const CreateHomePage = (data) => {
 
 
 const CollPageGrid = (products) => {
-
     const items = products.map(prod => {
         return CollectionPageItem(prod)
     })
@@ -98,6 +97,7 @@ const CollPageGrid = (products) => {
 }
 
 export const CreateCollectionPage = (collpageData) => {
+ console.log({collpageData})
  return Wrapper('collpage', [
     Title(collpageData.title),
     CollPageGrid(collpageData.products)
