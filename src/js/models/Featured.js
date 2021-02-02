@@ -9,9 +9,7 @@ export default class Featured {
         try {   
             const result = await Shop.get('/')
             this.products = result.data.data;
-
-            console.log("Running from Featured....")
-            console.log(this.products)
+            
         }catch(err) {
             console.log(err);
         }
