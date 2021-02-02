@@ -9,6 +9,6 @@ export const renderHomepaeWithFeaturedResult = (products) => {
     // create new object using API call featured products and static banner url and title
     const newhomepageData = { bannerUrl: bannerUrl, homepageSectionTitle: title, products } 
 
-    // Render homepage with newly creatd homapge data
+    // Render homepage with newly creatd homapge data using helper renderPage
     renderPage("homepage", newhomepageData);
 }
