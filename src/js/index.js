@@ -22,12 +22,16 @@ import Collection from "./models/Collection";
 import * as homeView from './views/featuredView';
 import * as productPageView from './views/productView';
 import * as collectionView from './views/collectionView';
+import * as searchView from './views/searchView';
+import Search from "./models/Search";
 
 
 // GLOBAL STATE 
 const state = {
 
 }
+
+
 
 // Controller - Featured 
 const controlFeatured = async () => {
@@ -44,6 +48,8 @@ const controlFeatured = async () => {
     homeView.renderHomepaeWithFeaturedResult(state.featured.products);
 }
 
+
+// Controller - Product 
 const controlProduct = async (id) => {
     // 1. New Product object and add to the state.
     state.product = new Product(id)
@@ -57,6 +63,8 @@ const controlProduct = async (id) => {
     productPageView.renderWithProducResult(state.product.product);
 }
 
+
+// Controller - Collection 
 const controlCollection = async (type) => {
     // 1. New Product object and add to the state.
     state.collection = new Collection(type)
@@ -67,8 +75,30 @@ const controlCollection = async (type) => {
     await state.collection.getProductsOfType()
 
     // 4. Render the result on the UI
-    collectionView.renderWithProducResult(state.collection.products);
+    collectionView.renderWithProducResult(state.collection.products,type);
 }
+
+// Controller - Search 
+const controlSearch = async () => {
+    // 1. Get query from view
+    const query = "men";
+    
+    if(query) {
+        // 2. New Serch object and add to the state.
+        state.search = new Search(query)
+        
+        // 2. Preare UI for the result 
+        searchView.clearInput()
+        // 3. Search for Single Product by ID
+        await state.search.getProducts()
+    
+        // 4. Render the result on the UI
+        searchView.renderSearchResult(state.search.result)
+    }
+
+}
+
+
 
 // 1) Initializze Layout Container Components - Header, Main, Footer
 createApp();
@@ -100,9 +130,10 @@ navLinks.forEach(item => {
 
 // 3. search
 document.body.querySelector('.search__button').addEventListener('click', () => {
-    const value = document.body.querySelector('.search__input').value;
-    const searchData = {...collpageData, title: ("Search Result!" + " " + value)}
-    renderPage("collpage", searchData)
+    controlSearch()
+    // const value = document.body.querySelector('.search__input').value;
+    // const searchData = {...collpageData, title: ("Search Result!" + " " + value)}
+    // renderPage("collpage", searchData)
 })
 
 // 4. Product Item
