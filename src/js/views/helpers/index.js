@@ -5,7 +5,7 @@ import Header from '../components/layouts/Header';
 import Main from '../components/layouts/Main';
 
 
-import { ProductCartButton, ProductColor, ProductDescription, ProductImageBox, ProductInfo, ProductSeemMoreHeading, ProductSeeMoreItem, ProductSize, Wrapper, Banner, SubTitle, HomepageProductItem , Title, CollectionPageItem} from '../components';
+import { ProductCartButton, ProductColor, ProductDescription, ProductImageBox, ProductInfo, ProductSeemMoreHeading, ProductSeeMoreItem, ProductSize, Wrapper, Banner, SubTitle, HomepageProductItem , Title, CollectionPageItem, ShimmerBox} from '../components';
 import { collpageData, homepageData, productpageData } from '../../data';
 
 
@@ -125,6 +125,14 @@ export const renderPage = (resource, staticData) => {
             document.querySelector('body').querySelector('.main').append(
                 CreateProductPage(staticData)
             )
-    }
+        }else if(resource === "shimmer") {
+            document.querySelector('body').querySelector('.main').innerHTML = ``;
+            document.querySelector('body').querySelector('.main').append(
+                CreateShimmerPage()
+            )
+        }
 }
 
+export const CreateShimmerPage = () => {
+    return ShimmerBox()
+}

@@ -259,3 +259,25 @@ export const CollectionPageItem = (prod) => {
 }
 
 
+
+
+// Shimmer Elements Components 
+//////////////////////////////////////
+
+
+export const ShimmerBox = () => {
+    const box = document.createElement('div')
+    // box.classList.add('shimmer-box');
+    const htmlString = `
+        <div class="shimmer" style="padding: 5px 0">
+            <div class="shimmer__banner shimmer-box"></div>
+            <div class="shimmer__banner shimmer-box"></div>
+            <div class="shimmer__banner shimmer-box"></div>
+            <div class="shimmer__banner shimmer-box"></div>
+        </div>
+    `;
+
+    box.innerHTML = htmlString;
+    return box;
+}
+

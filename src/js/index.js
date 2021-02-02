@@ -12,7 +12,7 @@ import '../scss/main.scss'
 import { elements } from "./views/base";
 
 
-import { createApp, renderPage } from "./views/helpers";
+import { createApp, CreateHomePage, CreateProductPage, renderPage } from "./views/helpers";
 import { productpageData, collpageData } from "./data";
 
 // Model Imports
@@ -26,6 +26,7 @@ import * as homeView from './views/featuredView';
 import * as productPageView from './views/productView';
 import * as collectionView from './views/collectionView';
 import * as searchView from './views/searchView';
+import { ShimmerBox } from "./views/components";
 
 
 // GLOBAL STATE 
@@ -45,6 +46,8 @@ const controlSearch = async () => {
         
         // 2. Preare UI for the result 
         searchView.clearInput()
+        renderPage('shimmer')
+
 
         // 3. Search for Single Product by ID
         await state.search.getProducts()
@@ -62,6 +65,9 @@ const controlFeatured = async () => {
     
     // 1. New featured object and add to the state 
     state.featured = new Featured()
+
+    // 2. Preare UI for the result 
+    renderPage('shimmer')
         
     // 3. Search for Featured products
     await state.featured.getFeaturedProducts()
@@ -76,6 +82,9 @@ const controlFeatured = async () => {
 const controlProduct = async (id) => {
     // 1. New Product object and add to the state.
     state.product = new Product(id)
+
+    // 2. Preare UI for the result 
+    renderPage('shimmer')
     
     // 3. Search for Single Product by ID
     await state.product.getProduct()
@@ -90,6 +99,9 @@ const controlProduct = async (id) => {
 const controlCollection = async (type) => {
     // 1. New Product object and add to the state.
     state.collection = new Collection(type)
+
+    // 2. Preare UI for the result 
+    renderPage('shimmer')
     
     // 3. Search for Single Product by ID
     await state.collection.getProductsOfType()
@@ -106,8 +118,6 @@ const controlCollection = async (type) => {
 // 1) Initializze Layout Container Components - Header, Main, Footer
 createApp();
 controlFeatured()
-
-
 
 
 // 2) Add Listeners 
