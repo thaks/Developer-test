@@ -156,5 +156,70 @@ export const addListeners = () => {
         })
     })
 
-  
+    // 3. search
+    document.body.querySelector('.search__button').addEventListener('click', () => {
+        const value = document.body.querySelector('.search__input').value;
+        const searchData = {...collpageData, title: ("Search Result!" + " " + value)}
+        renderPage("collpage", searchData)
+    })
+
+    // 4. Product Item
+    window.addEventListener('click', async e => {
+        const closestItem = e.target.closest('.product-item-button');
+        if(!closestItem) {
+            return;
+        }
+        renderPage("productpage", productpageData)
+    })
+
+    // 5. Product Size Varaint
+    window.addEventListener('click', e => {
+        const closestItem = e.target.closest('.ppage-info-main__size__item');
+        if(!closestItem) {
+            return;
+        }
+
+        const value = closestItem.dataset.value;
+        if(!value) return
+
+        const sizeResult = document.body.querySelector('.ppage-info-main__size__selectedshow');
+        const allSizesButtons = document.body.querySelectorAll('.ppage-info-main__size__item');
+        
+        allSizesButtons.forEach(item => {
+            item.classList.remove('selected')
+        })
+
+        closestItem.classList.add('selected')
+        sizeResult.innerHTML = value;
+        
+        console.log({allSizesButtons})
+        console.log({sizeResult})
+    })
+    
+    // 
+    
+    // 5. Product Color Varaint
+    window.addEventListener('click', e => {
+        const closestItem = e.target.closest('.ppage-info-main__color__item');
+        if(!closestItem) {
+            return;
+        }
+
+        const value = closestItem.dataset.value;
+        if(!value) return
+
+        const colorReslut = document.body.querySelector('.ppage-info-main__color__selectedshow');
+        const allColorButtons = document.body.querySelectorAll('.ppage-info-main__color__item');
+        
+        allColorButtons.forEach(item => {
+            item.classList.remove('selected')
+        })
+
+        closestItem.classList.add('selected')
+        colorReslut.innerHTML = value;
+    })
+    
+    // 5. Product Color Varaint;
+    // ppage-info-main__color__item
+    // ppage-info-main__color__selectedshow
 }
