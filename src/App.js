@@ -1,4 +1,4 @@
-import './App.css';
+import './App.scss';
 import CollectionPage from './pages/collectionpage/collectionpage.component';
 import HomePage from './pages/homepage/homepage.component';
 import { Route, Switch } from 'react-router-dom';

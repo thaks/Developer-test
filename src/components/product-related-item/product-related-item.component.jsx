@@ -1,5 +1,4 @@
 import React from 'react'
-import './product-related-item.styles.scss'
 
 const ProductRelatedItem = ({image}) => {
     return <div className="product-related-item">

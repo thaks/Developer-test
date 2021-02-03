@@ -1,8 +1,16 @@
 .navlink {
+    font-size: 1.6rem;
     cursor: pointer;
     border-radius: 5px;
     padding: 10px 20px;
     margin-right: 5px;
+
+    @media (max-width: 600px) {
+        font-size: 1.3rem;
+        padding: .5rem 1rem;
+        margin-right: 0;
+
+    }
 
     &:hover {
         background-color: #eee;

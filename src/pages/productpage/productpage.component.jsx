@@ -12,9 +12,13 @@ const ProductPage = () => {
     if(loading || !data ) return <h2>Loading...</h2>
     if(error) return <h2>Error!</h2>
 
-    return data && <div className="productpage">
+    return data && <div className=".productpage-wrapper">
+
+     <div className="productpage">
         <ProductImage imageUrl={data.product.imageUrl} />
         <ProductInfo product={data.product} />
+    </div>
+
     </div>
 }
 

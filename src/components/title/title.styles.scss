@@ -4,4 +4,9 @@
     margin-top: 20px;
     text-align: center;
     text-transform: capitalize;
+
+    @media(max-width: 600px) {
+        font-size: 2rem;
+        margin-top: 1rem;
+    }
 }

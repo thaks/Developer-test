@@ -1,7 +1,7 @@
-.product-item__title {
+.product-item__price {
     margin: 1rem 0;
-    font-size: 1.6rem;
-    color: rgb(49, 49, 49);
+    font-size: 1.5rem;
+    font-weight: bold;
 
     @media(max-width: 600px) {
         font-size: 1.2rem;

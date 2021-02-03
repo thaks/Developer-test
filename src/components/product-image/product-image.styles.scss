@@ -1,0 +1,16 @@
+.product-image {
+    display: flex;
+    // background-color: red;
+    width: 100%;
+    padding: 2.5rem;
+    border-radius: 5px;
+    
+    @media(max-width: 600px) {
+        padding: 0;
+    }
+}
+
+.product-image__img {
+    border-radius: 5px;
+    width: 100%;
+}

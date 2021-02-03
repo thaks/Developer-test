@@ -2,5 +2,10 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 15px;
-    margin-bottom: 50px;
+    margin-bottom: 3rem;
+    
+    @media(max-width: 600px) {
+        grid-template-columns: repeat(2, 1fr);
+
+    }
 }

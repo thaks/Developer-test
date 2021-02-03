@@ -1,6 +1,12 @@
 .banner {
     margin-bottom: 40px;
+    border-radius: 5px;
+    
+    @media (max-width: 600px) {
+        margin-bottom: 3rem;
+    }
     &__image {
+        border-radius: 5px;
         width: 100%;
     }
 }

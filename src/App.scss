@@ -1,0 +1,82 @@
+
+// MEDIA QUERY MANAGER
+
+/*
+0 - 600px Phone
+600px - 900px Tablet Portrait
+900px - 1200px Tablet landscape
+[1200 - 1800] normal styles
+1800px + : Big Deskop
+$breakpoint argument choices
+- phone
+- tab-port
+- tab-land
+- big-desktop
+1em = 16px
+*/
+
+@mixin respond($breakpoint) {
+    @if $breakpoint == phone {
+        @media (max-width: 37.5em) {@content};
+    }
+    @if $breakpoint == tab-port {
+        @media (max-width: 56.25em) {@content};
+    }
+    @if $breakpoint == tab-land {
+        @media (max-width: 75em) {@content};
+    }
+    @if $breakpoint == big-desktop {
+        @media (max-width: 112.5em) {@content};
+    }
+}
+
+
+//  base 
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    // This defines what 1 rem is
+    font-size: 62.5%; // 1rem = 10px; 10px/16px = 62.5%
+}
+
+body {
+    box-sizing: border-box;
+    padding: 3rem;
+
+
+    @include respond(tab-port) {
+        padding: 1.5rem;
+    }
+}
+
+.app {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+
+.produt-related-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 1rem;
+    margin-bottom: 2rem;
+    
+    @media(max-width: 600px) {
+        grid-column-gap: .5rem;
+    }
+}
+
+.product-related-item {
+    width: 100%;
+
+    &__image {
+        width: 100%;
+    }
+}

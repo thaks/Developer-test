@@ -23,8 +23,8 @@ const Search = () => {
 
     return <div className="search">
         <form action="" className="search-form" onSubmit={handleSubmit}>
-            <input type="text" name="" id="" className="search-input" value={searchValue} onChange={handleChange}/>
-            <input type="submit" value="Search"/>
+            <input type="text" name="" id="" className="search-input" value={searchValue} onChange={handleChange} placeholder="SEARCH"/>
+            <input className="search-button" type="submit" value="S"/>
         </form>
     </div>
 }
