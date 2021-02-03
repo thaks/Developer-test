@@ -1,8 +1,8 @@
 import React from 'react'
 import './product-item-price.styles.scss'
 
-const ProductItemPrice = () => {
-    return <p className="product-item__price">AED 345</p>
+const ProductItemPrice = ({price}) => {
+    return <p className="product-item__price">{price}</p>
 }
 
 export default ProductItemPrice;
