@@ -1,32 +1,35 @@
 import React, {useState} from 'react'
 import { useHistory } from 'react-router-dom';
+
 import './search.styles.scss';
+
+import SearchBox from '../search-box/search-box.component';
+import SearchButton from '../search-button/search-button.component';
 
 
 const Search = () => {
     const [searchValue, setSearchValue] = useState("")
     const history = useHistory()
     
+    const handleChange = e => {
+        setSearchValue(e.target.value);
+    }
 
-    const handleSubmit = e => {
-        e.preventDefault();
+    const handleSearch = () => {
         if(searchValue) {
             history.push(`/shop/collection/${searchValue}`, {search: true, searchTerm: searchValue})
             setSearchValue("")
         }
     }
 
-    const handleChange = e => {
-        setSearchValue(e.target.value);
-    }
-
-
     return <div className="search">
-        <form action="" className="search-form" onSubmit={handleSubmit}>
-            <input type="text" name="" id="" className="search-input" value={searchValue} onChange={handleChange} placeholder="SEARCH"/>
-            <input className="search-button" type="submit" value="S"/>
+        <form action="" className="search-form">
+            <SearchBox searchValue={searchValue} handleChange={handleChange} />
+            <SearchButton handleSearch={handleSearch}/>
         </form>
     </div>
 }
 
 export default Search;
+
+

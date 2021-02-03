@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import './product-swatch-item.styles.scss'
 
 const ProductSwatchItem = ({swatch, handleClick}) => {

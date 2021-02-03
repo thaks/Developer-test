@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import ProductItem from '../product-item/product-item.component'
 import './product-grid.styles.scss'
 
