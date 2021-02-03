@@ -8,6 +8,8 @@ import ProductTitle from '../product-title/product-title.component';
 import SubTitle from '../subtitle/subtitle.component';
 import './product-info.styles.scss'
 
+
+
 const ProductInfo = ({product}) => {
     return <div className="product-info">
         <ProductTitle title={product.title}/>
