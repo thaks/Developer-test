@@ -8,7 +8,6 @@ const Header = () => {
     return <header className="header">
         <Logo/>
         <NavBar/>
-
     </header>
 }
 
