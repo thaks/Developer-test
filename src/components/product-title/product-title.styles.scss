@@ -1,0 +1,8 @@
+.product-title {
+    font-size: 2.8rem;
+    color: rgb(48, 44, 44);
+    margin-bottom: 1rem;
+    @media(max-width: 600px) {
+        font-size: 2rem;
+    }
+}

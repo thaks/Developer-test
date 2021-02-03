@@ -17,7 +17,7 @@ const HomePage = () => {
 
     return <div className="homepage">
         <Banner/>
-        <SubTitle/>
+        <SubTitle subtitle="FEATURED PRODUCTS"/>
         <ProductGrid products={data.data}/>            
     </div>
 }

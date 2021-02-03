@@ -1,13 +1,15 @@
-import React from 'react'
+import React, {useState} from 'react'
 import ProductItem from '../product-item/product-item.component'
 import './product-grid.styles.scss'
 
 const ProductGrid = ({products}) => {
+
+
     return <div className="product-grid">
         {
             products &&
             products.map(prod => {
-                return <ProductItem key={prod.id} product={prod} />
+                return <ProductItem key={prod.id} product={prod}/>
             })
         }
 

@@ -1,9 +1,11 @@
-.product-item__price {
-    margin: 1rem 0;
-    font-size: 1.5rem;
+.product-price {
+    margin-top: .3rem;
+    font-size: 2.2rem;
     font-weight: bold;
+    color: rgb(48, 44, 44);
 
+    
     @media(max-width: 600px) {
-        font-size: 1.2rem;
+        font-size: 1.8rem;
     }
 }

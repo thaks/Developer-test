@@ -6,12 +6,13 @@ import './product-swatch.styles.scss'
 
 const ProductSwatchInfo = ({title,value}) => {
     return <div className="product-swatch-info">
-        <ProductSwatchTitle title="Size :"/>
+        <ProductSwatchTitle title={`${title}`}/>
         <ProductSwatchShow value={value} />
     </div>
 }
 
 const ProductSwatchGrid = ({swatches, handleClick}) => {
+
     return <div className="product-swatch-grid">
         {swatches && swatches.map((swatch, index) => {
             return <ProductSwatchItem key={index} swatch={swatch} handleClick={handleClick}/>
@@ -21,6 +22,7 @@ const ProductSwatchGrid = ({swatches, handleClick}) => {
 
 const ProductSwatch = ({title,swatches}) => {
     const [value, setValue] = useState("")
+    
 
     useEffect(() => {
         if(swatches) {
