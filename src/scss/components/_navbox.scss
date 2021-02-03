@@ -1,9 +1,0 @@
-.nav {
-    display: flex;
-    margin-bottom: 1rem;
-    justify-content: space-between;
-
-    @include respond(tab-port) {
-        width: 100%;
-    }
-}
