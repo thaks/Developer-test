@@ -1,10 +1,10 @@
 import axios from 'axios';
 import { useQuery } from 'react-query';
 
+// Async fetch for homepage products
 async function fetchProducts() {
     try {
         const result = await axios.get(`https://developer-test-server.herokuapp.com/api/v1/products/featured`)
-        console.log(result.data)
         return result.data;
 
     }
@@ -13,7 +13,9 @@ async function fetchProducts() {
     }
 }
 
+// custom hook to fetch hompage data
 export const useFeaturedProducts = () => {
+    // loading and error state for hompage products
     const {loading, error, data} = useQuery("",fetchProducts)
     return {loading, error, data}
 }
