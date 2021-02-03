@@ -1,24 +1,7 @@
 import React, {useEffect, useState} from 'react'
-import ProductSwatchItem from '../product-swatch-item/product-swatch-item.component'
-import ProductSwatchShow from '../product-swatch-show/product-swatch-show.component'
-import ProductSwatchTitle from '../product-swatch-title/product-swatch-title.compoent'
+import ProductSwatchGrid from '../product-swatch-grid/product-swatch-grid.component'
+import ProductSwatchInfo from '../product-swatch-info/product-swatch-info.component'
 import './product-swatch.styles.scss'
-
-const ProductSwatchInfo = ({title,value}) => {
-    return <div className="product-swatch-info">
-        <ProductSwatchTitle title={`${title}`}/>
-        <ProductSwatchShow value={value} />
-    </div>
-}
-
-const ProductSwatchGrid = ({swatches, handleClick}) => {
-
-    return <div className="product-swatch-grid">
-        {swatches && swatches.map((swatch, index) => {
-            return <ProductSwatchItem key={index} swatch={swatch} handleClick={handleClick}/>
-        })}
-    </div>
-}
 
 const ProductSwatch = ({title,swatches}) => {
     const [value, setValue] = useState("")
@@ -33,6 +16,7 @@ const ProductSwatch = ({title,swatches}) => {
             }
         }
     }, [swatches])
+
 
     const handleClick = v => setValue(v)
 
