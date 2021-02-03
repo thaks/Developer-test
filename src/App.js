@@ -13,9 +13,8 @@ function App() {
       <Header/>
       <Switch>
         <Route exact path="/" component={HomePage} />
-        <Route exact path="/shop/collection/:collectionType" component={CollectionPage} />
-        <Route exact path="/shop/products/:productId" component={ProductPage} />
-
+        <Route path="/shop/collection/:collectionType" component={CollectionPage} />
+        <Route path="/shop/products/:productId" component={ProductPage} />
      </Switch> 
      <Footer/>
     </div>
