@@ -1,4 +1,7 @@
-import React, {useState, useEffect} from 'react'
+import React from 'react'
+import axios from 'axios'
+import {useQuery} from 'react-query'
+
 import Banner from '../../components/banner/banner.component';
 import ProductGrid from '../../components/product-grid/product-grid.component';
 import SubTitle from '../../components/subtitle/subtitle.component';
@@ -7,45 +10,28 @@ import './homepage.styles.scss';
 
 
 
-const HomePage = () => {
-    const [data, setData] = useState(null)
+async function fetchProducts() {
+    try {
+        const result = await axios.get(`https://developer-test-server.herokuapp.com/api/v1/products/featured`)
+        return result.data;
+    }
+    catch(err) {
+        console.log(err.message)
+    }
+}
 
-    useEffect(() => {
-        setData([{
-            "id": 10001,
-            "imageUrl": "https://cdn.shopify.com/s/files/1/2610/4676/products/SNC20669copy.jpg?v=1608552522",
-            "title": "Sketchers Men's Scrub Set",
-            "price": "AED 350",
-            "sizes": [
-                {sizeName: "XS"},
-                {sizeName: "SM"},
-                {sizeName: "MD"},
-                {sizeName: "LG"},
-                {sizeName: "XXL"},
-            ],
-            "colors": [
-                { colorName: "Red", colorCode: "Red",},
-                { colorName: "Blue", colorCode: "Blue",},
-                { colorName: "Yellow", colorCode: "Yellow",},
-            ],
-            "descripton": `
-                4001 Fatima Scrub Top features a v-neck and long sleeves. These sleeves cover the arms completely, 
-                providing modesty, protects from fluid contact and covers tattoos. The sleeves have a knit cuff and
-                    the shirt is fitted with princess seams and...`,
-            "related": [
-                {imageUrl: "https://cdn.shopify.com/s/files/1/2610/4676/products/SNC20670copy.jpg?v=1608552522",},
-                {imageUrl: "https://cdn.shopify.com/s/files/1/2610/4676/products/SNC20674copy.jpg?v=1608552522"},
-                {imageUrl: "https://cdn.shopify.com/s/files/1/2610/4676/products/SNC20675copy.jpg?v=1608552522"},
-                {imageUrl: "https://cdn.shopify.com/s/files/1/2610/4676/products/SNC20613copy.jpg?v=1608552522"}
-            ]
-        }])
-    }, [data])
+
+const HomePage = () => {
+    const {loading, error, data} = useQuery("",fetchProducts)
     
+    if(loading || !data ) return <h2>Loading...</h2>
+    if(error) return <h2>Error!</h2>
 
     return <div className="homepage">
+
         <Banner/>
         <SubTitle/>
-        <ProductGrid products={data}/>            
+        <ProductGrid products={data.products}/>            
     </div>
 }
 
