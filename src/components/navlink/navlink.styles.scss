@@ -1,0 +1,13 @@
+.navlink {
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin-right: 5px;
+
+    &:hover {
+        background-color: #eee;
+    }
+    &:link, &:active {
+        background-color: #ddd;
+    }
+}
