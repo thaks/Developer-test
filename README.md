@@ -1,6 +1,6 @@
  # Frontend Developer Test - STEP 4 - (Solution)
 
-Added Unit test for each component. and tested rendering and props of the components.
+Added Unit test for each component. and tested rendering and props of the components using Enzym and Jest
 
 Download ZIP -> ZIP FILE DOWNLOAD
 Download code using the Code Zip File option , and in the project directory, you can run:
