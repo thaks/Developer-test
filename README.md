@@ -5,7 +5,7 @@ No starting html file, Generated starter html on the fly using a webpack plugin 
 Created MVC architecture utilizing ES6 module/export/import,
 Used Sass to Control Scope With BEM Naming, and used 7-1 Sass Architecture,
 
-Clone the repo, and in the project directory, you can run:
+Clone the repo from Branch step1, and in the project directory, you can run:
 
 ### `npm install`
 ### `npm run start`
