@@ -4,7 +4,8 @@ Created Application boilerpate using Create-React-App, Used React Router Dom for
 Created each element as component. and created custom hooks to fetch products for each functionality.
 used 'react-query' to utilize the { loading, error } state.
 
-Download ZIP -> ZIP FILE DOWNLOAD
+Download ZIP -> ZIP FILE DOWNLOAD from Branch step3
+
 Download code using the Code Zip File option , and in the project directory, you can run:
 
 ### `npm install`
