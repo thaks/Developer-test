@@ -1,6 +1,6 @@
 # Frontend Developer Test - STEP 2 - (Solution)
 
-used axios and axios.create functionality to initiate the API URL connections.
+Used axios and axios.create functionality to initiate the API URL connections.
 used Async/Await to fetch data for three pages and serve it from Model to Views through Controller.
 
 Created 4 Controller for each specific functionality in the App
