@@ -8,6 +8,7 @@ Search, Homepage Featured Products, Collection page Products, ProductDetail
 
 
 Download ZIP -> ZIP FILE DOWNLOAD from Branch step2
+
 Download code using the Code Zip File option , and in the project directory, you can run:
 
 ### `npm install`
