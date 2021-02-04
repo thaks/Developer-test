@@ -6,7 +6,7 @@ https://frontend-developer-303802.uc.r.appspot.com
 
 Download ZIP -> ZIP FILE DOWNLOAD from Branch Step5
 
-Download code using the Code Zip File option , and in the project directory, you can run:
+Download code, and in the project directory, you can run:
 
 ### `npm install`
 ### `npm run start`
