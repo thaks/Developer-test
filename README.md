@@ -2,7 +2,8 @@
 
 Added Unit test for each component. and tested rendering and props of the components using Enzym and Jest
 
-Download ZIP -> ZIP FILE DOWNLOAD
+Download ZIP -> ZIP FILE DOWNLOAD from Branch 4
+
 Download code using the Code Zip File option , and in the project directory, you can run:
 
 ### `npm install`
