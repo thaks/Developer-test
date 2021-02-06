@@ -1,7 +1,11 @@
 # Frontend Developer Test - STEP 5 - (Solution)
 
-Created PWA functionality using ServiceWorker and Cache stytem. and deployed the Application to GCP
+Created PWA functionality using ServiceWorker and Cache stytem. and deployed the Application to 
 
+Heroku 
+https://mighty-chamber-80751.herokuapp.com/
+
+GCP
 https://frontend-developer-303802.uc.r.appspot.com
 
 Download ZIP -> ZIP FILE DOWNLOAD from Branch Step5
